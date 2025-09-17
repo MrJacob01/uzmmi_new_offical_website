@@ -67,7 +67,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Card 1 */}
-          <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/1.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+          <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors"></div>
             <div className="relative">
               <h3 className="font-bold text-lg mb-2">Опыт и инновации</h3>
@@ -76,14 +76,14 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
           </div>
           {/* Card 2 (split layout with overlay bubble) */}
             <div className="space-y-6">
-              <div className="relative rounded-3xl overflow-hidden group h-[200px]" style={{backgroundImage: "url(/images/1.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+              <div className="relative rounded-3xl overflow-hidden group h-[200px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/65 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 right-4 p-4">
                   <h3 className="font-bold text-base mb-1">Умные технологии</h3>
                   <p className="text-xs text-gray-300 leading-snug">Лидеры в AI и машинном обучении. Инновации для вашего бизнеса.</p>
                 </div>
               </div>
-              <div className="relative rounded-3xl overflow-hidden group h-[140px]" style={{backgroundImage: "url(/images/1.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+              <div className="relative rounded-3xl overflow-hidden group h-[140px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/65 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 right-4 p-4">
                   <h3 className="font-bold text-base mb-1">Безопасность</h3>
@@ -92,7 +92,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
               </div>
             </div>
           {/* Card 3 */}
-          <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/1.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+          <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors"></div>
             <div className="relative">
               <h3 className="font-bold text-lg mb-2">IT-Партнер</h3>
@@ -126,7 +126,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleOpenNews(news); } }}
             >
               <div className="relative h-40 overflow-hidden">
-                <div className="absolute inset-0 bg-center bg-cover scale-100 group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: 'url(/images/1.jpg)' }} />
+                <div className="absolute inset-0 bg-center bg-cover scale-100 group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: 'url(/images/building.jpg)' }} />
                 <div className="absolute inset-0" />
                 <div className="absolute top-3 left-3 px-2 py-1 rounded-md text-[10px] font-medium tracking-wide bg-blue-600/80 backdrop-blur text-white/90">
                   {news.date}
@@ -153,9 +153,14 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
           </h2>
           <p className="text-blue-200 mt-2 text-base md:text-lg">Актуальные отчеты и обращения руководства страны и министерства</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 h-300">
           {/* President Card */}
-          <div className="bg-white/10 rounded-2xl p-7 flex flex-col items-start shadow-lg hover:shadow-2xl transition group border border-white/10 relative overflow-hidden">
+          <div className="bg-white/10 rounded-2xl flex flex-col items-start shadow-lg hover:shadow-2xl transition group border border-white/10 relative overflow-hidden">
+            {/* Image */}
+            <div className="w-full h-80 md:h-52 overflow-hidden">
+              <img src="/images/prezint_qarori.jpg" alt="Президент Республики Узбекистан" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-7 w-full">
             <div className="flex items-center gap-3 mb-4">
               <div>
                 <div className="text-xs text-blue-200 font-semibold">Президент Республики Узбекистан</div>
@@ -164,9 +169,15 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
             </div>
             <p className="text-blue-100 text-sm mb-6">Последние отчеты, инициативы и обращения Президента Республики Узбекистан по вопросам цифровизации, инноваций и развития IT-сектора.</p>
             <a href="https://president.uz/ru/lists/view/press_service_news" target="_blank" rel="noopener noreferrer" className="mt-auto inline-block px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow transition">Читать подробнее</a>
+            </div>
           </div>
           {/* Ministry Card */}
-          <div className="bg-white/10 rounded-2xl p-7 flex flex-col items-start shadow-lg hover:shadow-2xl transition group border border-white/10 relative overflow-hidden">
+          <div className="bg-white/10 rounded-2xl flex flex-col items-start shadow-lg hover:shadow-2xl transition group border border-white/10 relative overflow-hidden">
+            {/* Image */}
+            <div className="w-full h-80 md:h-52 overflow-hidden">
+              <img src="/images/minstery_report.png" alt="Министерство" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-7 w-full">
             <div className="flex items-center gap-3 mb-4">
               <div>
                 <div className="text-xs text-blue-200 font-semibold">Министерство</div>
@@ -175,6 +186,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
             </div>
             <p className="text-blue-100 text-sm mb-6">Актуальные отчеты, публикации и новости Министерства, связанные с цифровыми технологиями и государственными информационными системами.</p>
             <a href="https://mitc.uz/ru/news/list.php?SECTION_ID=1" target="_blank" rel="noopener noreferrer" className="mt-auto inline-block px-5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow transition">Читать подробнее</a>
+            </div>
           </div>
         </div>
         <div className="flex justify-center mt-10">

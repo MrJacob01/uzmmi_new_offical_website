@@ -1,14 +1,18 @@
 import React from 'react';
-import { Building, Shield, Cpu, Users, TrendingUp, Settings } from 'lucide-react';
+import { Waves, Ruler, Sun, Atom, Clock, Magnet, Scale, Beaker, Thermometer, Calculator } from 'lucide-react';
 
 const ServicesPage = ({ cardClasses, isDarkMode, textSecondary }) => {
   const services = [
-    { icon: <Building className="w-12 h-12 text-blue-400" />, title: 'Цифровизация госуслуг', desc: 'Разработка и внедрение цифровых решений для государственных организаций' },
-    { icon: <Shield className="w-12 h-12 text-green-400" />, title: 'Информационная безопасность', desc: 'Комплексная защита информационных систем и данных' },
-    { icon: <Cpu className="w-12 h-12 text-purple-400" />, title: 'ИТ-консалтинг', desc: 'Экспертные консультации по цифровой трансформации' },
-    { icon: <Users className="w-12 h-12 text-orange-400" />, title: 'Интеграция систем', desc: 'Объединение различных информационных систем в единую экосистему' },
-    { icon: <TrendingUp className="w-12 h-12 text-red-400" />, title: 'Аналитика данных', desc: 'Обработка и анализ больших данных для принятия решений' },
-    { icon: <Settings className="w-12 h-12 text-indigo-400" />, title: 'Техническая поддержка', desc: 'Круглосуточная поддержка и обслуживание ИТ-систем' }
+    { icon: <Waves className="w-12 h-12 text-sky-400" />, title: 'Область по акустике, ультразвуку и вибрации', desc: 'Измерения звука, вибрации и ультразвука' },
+    { icon: <Ruler className="w-12 h-12 text-emerald-400" />, title: 'Область по длине', desc: 'Длины, размеры, геометрические параметры' },
+    { icon: <Sun className="w-12 h-12 text-amber-400" />, title: 'Область по фотометрии и радиометрии', desc: 'Световые и радиометрические измерения' },
+    { icon: <Atom className="w-12 h-12 text-pink-400" />, title: 'Область по ионизирующему излучению', desc: 'Радиационные измерения и дозиметрия' },
+    { icon: <Clock className="w-12 h-12 text-indigo-400" />, title: 'Область по времени и частоте', desc: 'Временные интервалы, частота, синхронизация' },
+    { icon: <Magnet className="w-12 h-12 text-yellow-400" />, title: 'Область по электричеству и магнетизму', desc: 'Электрические и магнитные измерения' },
+    { icon: <Scale className="w-12 h-12 text-rose-400" />, title: 'Область по массам и соответствующим величинам', desc: 'Масса, сила, давление и связанные величины' },
+    { icon: <Beaker className="w-12 h-12 text-green-400" />, title: 'Область по количеству вещества: метрология в химии и биологии', desc: 'Химические и биологические измерения' },
+    { icon: <Thermometer className="w-12 h-12 text-orange-400" />, title: 'Область по термометрии', desc: 'Температура и тепловые измерения' },
+    { icon: <Calculator className="w-12 h-12 text-purple-400" />, title: 'Область по единицам величин', desc: 'Единицы измерений и прослеживаемость' }
   ];
   return (
     <div className="space-y-8">
