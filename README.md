@@ -68,3 +68,52 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
+
+## Project Structure (Refactored)
+
+The app has been refactored to use a professional separation of pages, components, and layout primitives.
+
+```
+src/
+	App.js                # Root component (minimal)
+	pages/
+		MainPage.jsx        # Container for state + composition
+		HomePage.jsx        # Page: Home content
+		ServicesPage.jsx    # Page: Services
+		ProjectsPage.jsx    # Page: Projects
+		ContactsPage.jsx    # Page: Contacts
+		MorePage.jsx        # Page: Misc sections
+		index.js            # Barrel exports for pages
+	components/
+		DesktopNav.jsx      # Desktop navigation bar
+		MobileNav.jsx       # Mobile top header
+		MobileBottomNav.jsx # Mobile bottom navigation
+		SearchModal.jsx     # Reusable search modal
+		SettingsModal.jsx   # Theme + font settings modal
+		index.js            # Barrel exports for components
+	layouts/
+		Layout.jsx          # Global background + wrapper
+	hooks/                # (Reserved for future custom hooks)
+	utils/                # (Reserved for helpers)
+```
+
+### Architectural Notes
+
+* `MainPage.jsx` now focuses on application state (theme, search, navigation) and delegates UI to small components.
+* Each page owns only its content markup and receives shared styling/state props from `MainPage`.
+* Reusable UI (navigation, modals) lives under `components/`.
+* Visual chrome (background blobs + root wrappers) isolated in `layouts/Layout.jsx`.
+* Barrel files (`index.js`) enable cleaner import paths.
+
+### Next Suggested Improvements
+
+* Add React Router for real URL-based navigation instead of in-memory tab switching.
+* Introduce a global context (e.g. ThemeContext) to avoid prop drilling for `isDarkMode`.
+* Add TypeScript for stronger type safety.
+* Add unit tests for modal logic and navigation state.
+* Implement lazy-loading (React.lazy) for page-level code splitting.
+* Extract static data (news, projects, services) into JSON or a data service layer.
+
+---
