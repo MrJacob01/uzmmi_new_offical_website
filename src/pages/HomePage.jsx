@@ -42,15 +42,15 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
               {t(lang,'hero.titleLines')}
               <br className="hidden md:block" />
             </h1>
-            <p className={`text-lg md:text-xl leading-relaxed ${textSecondary}`}>
-              Единый интегратор по созданию и поддержке государственных информационных систем
+            <p className={`text-lg md:text-xl text-white leading-relaxed ${textSecondary}`}>
+              {t(lang, 'hero.subtitle')}
             </p>
             <div className="flex gap-4 pt-12 justify-center">
               <button className="flex items-center gap-2 px-6 h-14 rounded-xl bg-blue-900 hover:bg-[#162034] text-white font-medium transition-colors">
-                <Play size={18} className="opacity-80" /> Смотреть видео
+                <Play size={18} className="opacity-80" /> {t(lang, 'hero.watchVideo')}
               </button>
               <button className="flex items-center gap-2 px-6 h-14 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
-                Узнать больше
+                {t(lang, 'hero.learnMore')}
               </button>
             </div>
           </div>
@@ -61,17 +61,17 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
       <section className="mt-4">
         <div className="text-center mb-10">
           <div className="text-sm text-amber-400 mb-2 relative inline-block after:content-[''] after:block after:h-px after:bg-amber-500 after:mt-2 after:w-16 after:mx-auto">
-            Почему мы?
+          {t(lang,'about.header')}
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">о нас</h2>
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight">{t(lang, 'about.title')}</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Card 1 */}
           <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors"></div>
             <div className="relative">
-              <h3 className="font-bold text-lg mb-2">Опыт и инновации</h3>
-              <p className="text-sm text-gray-300 max-w-xs">Первые IT-решения в Узбекистане. Более 1400 экспертов.</p>
+              <h3 className="font-bold text-lg mb-2">{t(lang, 'about.card1_head')}</h3>
+              <p className="text-sm text-gray-300 max-w-xs">{t(lang, 'about.card1_title')}</p>
             </div>
           </div>
           {/* Card 2 (split layout with overlay bubble) */}
@@ -79,15 +79,15 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
               <div className="relative rounded-3xl overflow-hidden group h-[200px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/65 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 right-4 p-4">
-                  <h3 className="font-bold text-base mb-1">Умные технологии</h3>
-                  <p className="text-xs text-gray-300 leading-snug">Лидеры в AI и машинном обучении. Инновации для вашего бизнеса.</p>
+                  <h3 className="font-bold text-base mb-1">{t(lang, 'about.card2_head')}</h3>
+                  <p className="text-xs text-gray-300 leading-snug">{t(lang, 'about.card2_title')}</p>
                 </div>
               </div>
               <div className="relative rounded-3xl overflow-hidden group h-[140px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/65 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 right-4 p-4">
-                  <h3 className="font-bold text-base mb-1">Безопасность</h3>
-                  <p className="text-xs text-gray-300 leading-snug">Современные стандарты защиты и непрерывный мониторинг.</p>
+                  <h3 className="font-bold text-base mb-1">{t(lang, 'about.card3_head')}</h3>
+                  <p className="text-xs text-gray-300 leading-snug">{t(lang, 'about.card3_title')}</p>
                 </div>
               </div>
             </div>
@@ -95,8 +95,8 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
           <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors"></div>
             <div className="relative">
-              <h3 className="font-bold text-lg mb-2">IT-Партнер</h3>
-              <p className="text-sm text-gray-300 max-w-xs">Надежный IT-партнер для роста вашего бизнеса.</p>
+              <h3 className="font-bold text-lg mb-2">{t(lang, 'about.card4_head')}</h3>
+              <p className="text-sm text-gray-300 max-w-xs">{t(lang, 'about.card4_title')}</p>
             </div>
           </div>
         </div>
@@ -149,9 +149,9 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
       <section className={`${cardClasses} rounded-3xl p-8 bg-gradient-to-br from-blue-900/80 to-blue-700/80 shadow-xl`}>
         <div className="mb-10 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white flex items-center justify-center gap-3">
-            Постановление Президента Республики Узбекистана Кабинета Министров Республики Узбекистан
+            {t(lang,'reports.head')}
           </h2>
-          <p className="text-blue-200 mt-2 text-base md:text-lg">Актуальные отчеты и обращения руководства страны и министерства</p>
+          <p className="text-blue-200 mt-2 text-base md:text-lg">{t(lang,'reports.title')}</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 h-300">
           {/* President Card */}
@@ -197,13 +197,13 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
       <section className="pt-4">
         <div className="text-center max-w-5xl mx-auto mb-12">
           <div className="text-sm text-amber-400 mb-3 relative inline-block after:content-[''] after:block after:h-px after:bg-amber-500 after:mt-2 after:w-24 after:mx-auto">
-            Наши партнеры
+          {t(lang, 'partners.head')}
           </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Доверие и лояльность наших клиентов это наш безусловный успех</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{t(lang, 'partners.title')}</h2>
           <p className={`${textSecondary} text-base md:text-lg leading-relaxed max-w-4xl mx-auto`}>Один из важнейших, ключевых аспектов цифровизации – создание мощной базы по обработке, управлению и хранению данных. С этой целью был создан Единый интегратор UZINFOCOM, в чьи задачи входит создание и поддержка государственных информационных систем.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-8 text-white">
-            <button onClick={() => setSector('commercial')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all border ${(sector==='commercial') ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>Коммерческий сектор</button>
-            <button onClick={() => setSector('government')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all border ${(sector==='government') ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>Государственный сектор</button>
+            <button onClick={() => setSector('commercial')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all border ${(sector==='commercial') ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>{t(lang, 'partners.commercy')}</button>
+            <button onClick={() => setSector('government')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all border ${(sector==='government') ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>{t(lang, 'partners.goverments')}</button>
           </div>
         </div>
         <div className="relative group">

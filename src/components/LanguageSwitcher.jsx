@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LanguageSwitcher = ({ lang, onChange, isDarkMode }) => {
-  const next = lang === 'ru' ? 'en' : 'ru';
+  const next = lang === 'ru' ? 'en' : 'ru' ;
   return (
     <button
       onClick={() => onChange(next)}

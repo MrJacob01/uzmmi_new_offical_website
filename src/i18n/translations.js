@@ -13,14 +13,37 @@ export const translations = {
       watchVideo: 'Смотреть видео',
       learnMore: 'Узнать больше'
     },
+    about: {
+      header: 'Почему мы?',
+      title: 'О нас',
+      card1_head:'Опыт и инновации',
+      card1_title: 'Первые IT-решения в Узбекистане. Более 1400 экспертов.',
+      card2_head:'Умные технологии',
+      card2_title: 'Лидеры в AI и машинном обучении. Инновации для вашего бизнеса.',
+      card3_head:'Безопасность',
+      card3_title: 'Современные стандарты защиты и непрерывный мониторинг.',
+      card4_head:'IT-Партнер',
+      card4_title: 'Надежный IT-партнер для роста вашего бизнеса.',
+    },
     news: {
       latest: 'Последние новости',
       all: 'Все новости',
       detail: 'Детали новости'
     },
+    reports: {
+      head:'Постановление Президента Республики Узбекистана и Кабинета Министров Республики Узбекистан',
+      title:'Актуальные отчеты и обращения руководства страны и министерства'
+    },
     analytics: {
       title: 'Аналитика и обзоры',
       all: 'Все материалы'
+    },
+    partners: {
+      head: 'Наши партнеры',
+      title: 'Доверие и лояльность наших клиентов это наш безусловный успех',
+      title_2: '',
+      commercy: 'Коммерческий сектор',
+      goverments: 'Государственный сектор'
     },
     settings: {
       display: 'Настройки отображения',
@@ -70,14 +93,37 @@ export const translations = {
       watchVideo: 'Watch video',
       learnMore: 'Learn more'
     },
+    about: {
+      header: 'Why me?',
+      title: 'About company',
+      card1_head:'en_Опыт и инновации',
+      card1_title: 'en_Первые IT-решения в Узбекистане. Более 1400 экспертов.',
+      card2_head:'en_Умные технологии',
+      card2_title: 'en_Лидеры в AI и машинном обучении. Инновации для вашего бизнеса.',
+      card3_head:'en_Безопасность',
+      card3_title: 'en_Современные стандарты защиты и непрерывный мониторинг.',
+      card4_head:'en_IT-Партнер',
+      card4_title: 'en_Надежный IT-партнер для роста вашего бизнеса.',
+    },
     news: {
       latest: 'Latest News',
       all: 'All news',
       detail: 'News Detail'
     },
+    reports: {
+      head:'EN_Постановление Президента Республики Узбекистана и Кабинета Министров Республики Узбекистан',
+      title:'EN_Актуальные отчеты и обращения руководства страны и министерства'
+    },
     analytics: {
       title: 'Analytics & Insights',
       all: 'All materials'
+    },
+    partners: {
+      head: 'EN_Наши партнеры',
+      title: 'EN_Доверие и лояльность наших клиентов это наш безусловный успех',
+      title_2: 'EN_',
+      commercy: 'Commercial',
+      goverments: 'Goverments'
     },
     settings: {
       display: 'Display Settings',
