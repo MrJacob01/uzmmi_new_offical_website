@@ -9,12 +9,12 @@ const Footer = ({ lang, isDarkMode }) => {
   const linkBase = 'text-sm hover:text-blue-400 transition-colors';
 
   return (
-    <footer className={`mt-16 ${isDarkMode ?  'bg-black bg-opacity-50' : 'bg-white bg-opacity-50'} pt-12 pb-8`}>      
+    <footer className={`mt-16 bg-[#191970] pt-12 pb-8 text-white`}>      
       <div className="max-w-7xl mx-auto px-4 grid gap-10 md:grid-cols-4 lg:grid-cols-6">
         {/* Brand / About */}
         <div className="md:col-span-3 space-y-6">
           <img src='/images/logo_nim.svg' alt='Logo' className="w-30" />
-          <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>{t(lang,'footer.tagline')}</p>
+          <p className={`text-sm leading-relaxed text-gray-300`}>{t(lang,'footer.tagline')}</p>
           <div className="flex gap-3 pt-2">
             <a href="https://t.me/yourtelegram" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg flex items-center justify-center bg-blue-600/10 hover:bg-blue-600/20 text-blue-400"><FaTelegramPlane size={18} /></a>
             <a href="https://instagram.com/yourinstagram" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg flex items-center justify-center bg-blue-600/10 hover:bg-blue-600/20 text-blue-400"><FaInstagram size={18} /></a>

@@ -99,10 +99,16 @@ const DesktopNav = ({ isDarkMode, borderClasses, navItems, currentPage, setCurre
     };
   }, []);
 
-  const menuBg = isDarkMode ? 'bg-[#060a12]/95' : 'bg-white/95';
-  const menuBorder = isDarkMode ? 'border-white/10' : 'border-black/10';
+  // Time state
+  const [time, setTime] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const timeStr = time.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
   return (
-  <nav ref={navRef} className={`fixed top-0 left-0 right-0 z-50 ${isDarkMode ? 'bg-black/60' : 'bg-white/60'} backdrop-blur-xl border-b ${borderClasses} shadow-lg`} role="navigation" aria-label="Main navigation"> 
+  <nav ref={navRef} className={`fixed top-0 left-0 right-0 z-50 bg-[#191970] bg-opacity-90 text-white backdrop-blur-xl border-b ${borderClasses} shadow-lg`} role="navigation" aria-label="Main navigation"> 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => setCurrentPage('home')}>
@@ -110,7 +116,6 @@ const DesktopNav = ({ isDarkMode, borderClasses, navItems, currentPage, setCurre
           </div>
           <div className="hidden md:flex items-center space-x-6" onMouseLeave={handleLeave} role="menubar">
             {navItems.map((item) => {
-            //   const hasMega = ['services','company','Компания','Услуги'].includes(item.id) || ['Услуги','Компания'].includes(item.label);
               const triggerId = item.id === 'services' ? 'services' : (item.id === 'company' || item.label === 'Компания' ? 'company' : null);
               return (
                 <div key={item.id} className="relative" onMouseEnter={() => triggerId && handleEnter(triggerId)} onFocus={() => triggerId && handleEnter(triggerId)} onMouseLeave={handleLeave}>
@@ -137,7 +142,7 @@ const DesktopNav = ({ isDarkMode, borderClasses, navItems, currentPage, setCurre
                       id={`${triggerId}-menu`}
                       role="menu"
                       aria-labelledby={`menu-trigger-${triggerId}`}
-                      className={`absolute left-0 top-full mt-3 w-[620px] xl:w-[740px] ${menuBg} ${isDarkMode ? 'text-gray-100' : 'text-gray-800'} border ${menuBorder} rounded-2xl shadow-2xl p-8 grid grid-cols-3 gap-10 animate-fadeIn backdrop-blur-xl`}
+                      className={`absolute left-0 top-full mt-3 w-[620px] bg-[#191970] xl:w-[740px] border 'border-white/10' rounded-2xl shadow-2xl p-8 grid grid-cols-3 gap-10 animate-fadeIn backdrop-blur-xl`}
                       onMouseEnter={() => handleEnter(triggerId)}
                       onMouseLeave={handleLeave}
                     > 
@@ -166,21 +171,25 @@ const DesktopNav = ({ isDarkMode, borderClasses, navItems, currentPage, setCurre
             })}
           </div>
           <div className="flex items-center space-x-4">
+            {/* Time display */}
+            <span className={`font-mono text-3xl text-white`} aria-label="Current time">
+              {timeStr}
+            </span>
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-lg ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} transition-colors`}
+              className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
             >
               <Search size={20} />
             </button>
             <button 
               onClick={() => setIsSettingsOpen(true)}
-              className={`p-2 rounded-lg ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} transition-colors`}
+              className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
             >
               <Eye size={20} />
             </button>
             <button 
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className={`p-2 rounded-lg ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} transition-colors`}
+              className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>

@@ -1,10 +1,24 @@
 import React from 'react';
 import { Eye, X, Type, Sun, Moon } from 'lucide-react';
 
-const SettingsModal = ({ isDarkMode, setIsDarkMode, cardClasses, borderClasses, setIsSettingsOpen, fonts, currentFont, setCurrentFont }) => {
+const SettingsModal = ({
+  isDarkMode,
+  setIsDarkMode,
+  cardClasses,
+  borderClasses,
+  setIsSettingsOpen,
+  fonts,
+  currentFont,
+  setCurrentFont,
+  fontSizes = [],
+  fontSize,
+  setFontSize
+}) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className={`${cardClasses} rounded-lg w-full max-w-md`}>
+      <div
+        className={`${cardClasses} rounded-lg w-full max-w-md max-h-[80vh] flex flex-col`} // added max-h and flex
+      >
         <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'transparent' }}>
           <h3 className="text-lg font-semibold flex items-center">
             <Eye size={20} className="mr-2" />
@@ -17,7 +31,7 @@ const SettingsModal = ({ isDarkMode, setIsDarkMode, cardClasses, borderClasses, 
             <X size={20} />
           </button>
         </div>
-        <div className="p-4 space-y-6">
+        <div className="p-4 space-y-6 overflow-y-auto flex-1"> {/* made scrollable */}
           <div>
             <h4 className="font-medium mb-3 flex items-center">
               <Type size={16} className="mr-2" />
@@ -66,6 +80,31 @@ const SettingsModal = ({ isDarkMode, setIsDarkMode, cardClasses, borderClasses, 
               </button>
             </div>
           </div>
+          {/* Font size selection with horizontal scroll */}
+          <div className="mt-2">
+            <div className="text-sm font-medium mb-2">
+              Размер шрифта
+            </div>
+            <div className="flex gap-2 overflow-x-auto pb-2 pr-1 hidescrollbar">
+              {fontSizes.map(s => (
+                <button
+                  key={s.value}
+                  type="button"
+                  onClick={() => setFontSize && setFontSize(s.value)}
+                  className={`
+                    px-3 py-2 rounded-md border whitespace-nowrap transition
+                    ${fontSize === s.value
+                      ? 'border-blue-500 bg-blue-500/20 ring-1 ring-blue-400'
+                      : 'border-transparent hover:border-blue-400'}
+                    ${isDarkMode ? 'text-gray-200' : 'text-gray-800'}
+                  `}
+                >
+                  <span className={s.value}>{s.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+          {/* ...existing / future sections... */}
         </div>
       </div>
     </div>

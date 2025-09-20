@@ -4,18 +4,13 @@ import { Calendar, ArrowRight, Play, ChevronLeft, ChevronRight } from 'lucide-re
 
 // Partners mock data
 const PARTNERS = [
-  { id: 1, name: 'AloqaBank', sector: 'commercial', logo: '/images/logo192.png' },
-  { id: 2, name: 'Веб-сайт Президента Республики Узбекистан', sector: 'government', logo: '/images/logo192.png' },
-  { id: 3, name: 'Сенат Олий Мажлиса', sector: 'government', logo: '/images/logo192.png' },
-  { id: 4, name: 'Министерство Юстиции', sector: 'government', logo: '/images/logo192.png' },
-  { id: 5, name: 'Министерство Дошкольного Образования', sector: 'government', logo: '/images/logo192.png' },
-  { id: 6, name: 'Коммерческий банк X', sector: 'commercial', logo: '/images/logo192.png' },
-  { id: 7, name: 'ИТ Агентство', sector: 'commercial', logo: '/images/logo192.png' },
-  { id: 8, name: 'Госкомитет Цифровизации', sector: 'government', logo: '/images/logo192.png' },
-  { id: 9, name: 'Госкомитет Цифровизации', sector: 'government', logo: '/images/logo192.png' },
+  { id: 1, name: 'IpotekaBank', sector: 'commercial', logo: '/images/ipoteka.png' },
+  { id: 2, name: 'Веб-сайт Президента Республики Узбекистан', sector: 'government', logo: '/images/gerb.png' },
+  { id: 3, name: 'Сенат Олий Мажлиса', sector: 'government', logo: '/images/oliy_majlis.png' },
+  { id: 4, name: 'Uzinfocom', sector: 'commercial', logo: '/images/uzinfocom.svg' },
 ];
 
-const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData, analysisData, lang, setCurrentPage = () => {}, onSelectNews = () => {} }) => {
+const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData, analysisData, lang, setCurrentPage, onSelectNews = () => {} }) => {
   const [sector, setSector] = useState('commercial');
   const partnersRef = useRef(null);
 
@@ -38,15 +33,15 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
         <div className="grid text-center justify-center py-12 relative z-10">
           {/* Left Content */}
           <div className="lg:col-span-5 space-y-12 ">
-            <h1 className="text-3xl md:text-5xl xl:text-6xl font-bold leading-tight tracking-tight ">
+            <h1 className="text-3xl md:text-5xl xl:text-6xl text-white font-bold ">
               {t(lang,'hero.titleLines')}
               <br className="hidden md:block" />
             </h1>
-            <p className={`text-lg md:text-xl text-white leading-relaxed ${textSecondary}`}>
+            <p className={`text-lg md:text-xl text-white leading-relaxed`}>
               {t(lang, 'hero.subtitle')}
             </p>
             <div className="flex gap-4 pt-12 justify-center">
-              <button className="flex items-center gap-2 px-6 h-14 rounded-xl bg-blue-900 hover:bg-[#162034] text-white font-medium transition-colors">
+              <button className="flex items-center gap-2 px-10 h-14 rounded-xl bg-blue-900 hover:bg-[#162034] text-white font-medium transition-colors">
                 <Play size={18} className="opacity-80" /> {t(lang, 'hero.watchVideo')}
               </button>
               <button className="flex items-center gap-2 px-6 h-14 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors">
@@ -67,7 +62,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {/* Card 1 */}
-          <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+          <div className="relative rounded-3xl border border-gray-300 overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors"></div>
             <div className="relative">
               <h3 className="font-bold text-lg mb-2">{t(lang, 'about.card1_head')}</h3>
@@ -76,14 +71,14 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
           </div>
           {/* Card 2 (split layout with overlay bubble) */}
             <div className="space-y-6">
-              <div className="relative rounded-3xl overflow-hidden group h-[200px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+              <div className="relative rounded-3xl border border-gray-300 overflow-hidden group h-[200px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/65 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 right-4 p-4">
                   <h3 className="font-bold text-base mb-1">{t(lang, 'about.card2_head')}</h3>
                   <p className="text-xs text-gray-300 leading-snug">{t(lang, 'about.card2_title')}</p>
                 </div>
               </div>
-              <div className="relative rounded-3xl overflow-hidden group h-[140px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+              <div className="relative rounded-3xl border border-gray-300 overflow-hidden group h-[140px]" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/65 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 right-4 p-4">
                   <h3 className="font-bold text-base mb-1">{t(lang, 'about.card3_head')}</h3>
@@ -92,7 +87,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
               </div>
             </div>
           {/* Card 3 */}
-          <div className="relative rounded-3xl overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
+          <div className="relative rounded-3xl border border-gray-300 overflow-hidden group min-h-[340px] flex flex-col justify-end p-6" style={{backgroundImage: "url(/images/building.jpg)", backgroundSize:'cover', backgroundPosition:'center'}}>
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-colors"></div>
             <div className="relative">
               <h3 className="font-bold text-lg mb-2">{t(lang, 'about.card4_head')}</h3>
@@ -119,7 +114,7 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
           {newsData.map(news => (
             <article
               key={news.id}
-              className="group rounded-2xl overflow-hidden relative flex flex-col h-full border border-white/10 bg-white-500 hover:bg-blue-900 transition shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/60"
+              className="group rounded-2xl overflow-hidden relative flex flex-col h-full border border-gray-300 bg-white-500 hover:bg-blue-900 transition shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/60"
               onClick={() => handleOpenNews(news)}
               role="button"
               tabIndex={0}
@@ -146,12 +141,12 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
           ))}
         </div>
       </section>
-      <section className={`${cardClasses} rounded-3xl p-8 bg-gradient-to-br from-blue-900/80 to-blue-700/80 shadow-xl`}>
+      <section className={`${isDarkMode ? 'text-white' : 'text-gray-800'} ${cardClasses} rounded-3xl p-8 border border-black-100`}>
         <div className="mb-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white flex items-center justify-center gap-3">
+          <h2 className={`text-3xl md:text-4xl font-extrabold  flex items-center justify-center gap-3`}>
             {t(lang,'reports.head')}
           </h2>
-          <p className="text-blue-200 mt-2 text-base md:text-lg">{t(lang,'reports.title')}</p>
+          <p className="mt-2 text-base md:text-lg">{t(lang,'reports.title')}</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 h-300">
           {/* President Card */}
@@ -163,11 +158,11 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
             <div className="p-7 w-full">
             <div className="flex items-center gap-3 mb-4">
               <div>
-                <div className="text-xs text-blue-200 font-semibold">Президент Республики Узбекистан</div>
-                <h3 className="font-bold text-lg text-white">Доклады и обращения Президента</h3>
+                <div className="text-xs font-semibold">Президент Республики Узбекистан</div>
+                <h3 className="font-bold text-lg">Доклады и обращения Президента</h3>
               </div>
             </div>
-            <p className="text-blue-100 text-sm mb-6">Последние отчеты, инициативы и обращения Президента Республики Узбекистан по вопросам цифровизации, инноваций и развития IT-сектора.</p>
+            <p className="text-sm mb-6">Последние отчеты, инициативы и обращения Президента Республики Узбекистан по вопросам цифровизации, инноваций и развития IT-сектора.</p>
             <a href="https://president.uz/ru/lists/view/press_service_news" target="_blank" rel="noopener noreferrer" className="mt-auto inline-block px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow transition">Читать подробнее</a>
             </div>
           </div>
@@ -180,17 +175,17 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
             <div className="p-7 w-full">
             <div className="flex items-center gap-3 mb-4">
               <div>
-                <div className="text-xs text-blue-200 font-semibold">Министерство</div>
-                <h3 className="font-bold text-lg text-white">Отчеты и публикации Министерства</h3>
+                <div className="text-xs font-semibold">Министерство</div>
+                <h3 className="font-bold text-lg">Отчеты и публикации Министерства</h3>
               </div>
             </div>
-            <p className="text-blue-100 text-sm mb-6">Актуальные отчеты, публикации и новости Министерства, связанные с цифровыми технологиями и государственными информационными системами.</p>
-            <a href="https://mitc.uz/ru/news/list.php?SECTION_ID=1" target="_blank" rel="noopener noreferrer" className="mt-auto inline-block px-5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow transition">Читать подробнее</a>
+            <p className="text-sm mb-6">Актуальные отчеты, публикации и новости Министерства, связанные с цифровыми технологиями и государственными информационными системами.</p>
+            <a href="https://president.uz/ru/lists/view/press_service_news" target="_blank" rel="noopener noreferrer" className="mt-auto inline-block px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow transition">Читать подробнее</a>
             </div>
           </div>
         </div>
         <div className="flex justify-center mt-10">
-          <button className="px-8 py-3 rounded-xl bg-blue-500 hover:bg-blue-600 text-white font-semibold text-sm shadow-lg transition">Показать больше</button>
+          <button className="text-xl text-amber-400 mb-3 relative inline-block after:content-[''] after:block after:h-px after:bg-amber-500 after:mt-2 after:w-12 after:mx-auto">{t(lang, 'reports.all')}</button>
         </div>
       </section>
       {/* Partners Section */}
@@ -202,13 +197,12 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
             <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">{t(lang, 'partners.title')}</h2>
           <p className={`${textSecondary} text-base md:text-lg leading-relaxed max-w-4xl mx-auto`}>Один из важнейших, ключевых аспектов цифровизации – создание мощной базы по обработке, управлению и хранению данных. С этой целью был создан Единый интегратор UZINFOCOM, в чьи задачи входит создание и поддержка государственных информационных систем.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-8 text-white">
-            <button onClick={() => setSector('commercial')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all border ${(sector==='commercial') ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>{t(lang, 'partners.commercy')}</button>
-            <button onClick={() => setSector('government')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all border ${(sector==='government') ? 'bg-blue-600 border-blue-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>{t(lang, 'partners.goverments')}</button>
+            <button onClick={() => setSector('commercial')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all ${(sector==='commercial') ? 'bg-blue-600 border-white-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>{t(lang, 'partners.commercy')}</button>
+            <button onClick={() => setSector('government')} className={`px-6 py-2 rounded-full text-xs font-medium tracking-wide transition-all ${(sector==='government') ? 'bg-blue-600 border-white-500 shadow-lg shadow-blue-500/25' : 'bg-blue-900/50 border-blue-700 hover:bg-blue-800'}`}>{t(lang, 'partners.goverments')}</button>
           </div>
         </div>
         <div className="relative group">
           {/* Gradient edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 rounded-l-2xl" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24 rounded-r-2xl" />
           {/* Scroll buttons (desktop) */}
           <button type="button" aria-label="Scroll left" onClick={() => scrollPartners(-1)} className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-xl bg-black/60 backdrop-blur border border-white/10 text-white items-center justify-center hover:bg-black/70 transition-opacity opacity-0 group-hover:opacity-100">
@@ -231,13 +225,13 @@ const HomePage = ({ isDarkMode, cardClasses, textSecondary, textMuted, newsData,
             {PARTNERS.filter(p => p.sector === sector).map(partner => (
               <div
                 key={partner.id}
-                className={`min-w-[220px] md:min-w-[260px] snap-start rounded-2xl p-5 relative overflow-hidden ${isDarkMode ? 'bg-white/5 hover:bg-white/10' : 'bg-white/70 hover:bg-white/90'} border border-white/10 shadow-sm transition group`}
+                className={`min-w-[220px] md:min-w-[260px] snap-start border border-gray-200 rounded-2xl p-5 relative overflow-hidden ${isDarkMode ? 'bg-white/5 hover:bg-white/10' : 'bg-white/70 hover:bg-white/90'} border border-white/10 shadow-sm transition group`}
               >
-                <div className="relative w-28 h-28 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center overflow-hidden ring-1 ring-white/10">
+                <div className="relative w-28 h-28 mx-auto mb-4 rounded-xl flex items-center justify-center">
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="w-full h-full object-contain p-2 mix-blend-screen"
+                    className="w-full h-full object-contain p-2"
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                   />
                 </div>

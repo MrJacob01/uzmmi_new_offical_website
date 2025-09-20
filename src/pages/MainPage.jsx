@@ -13,6 +13,7 @@ import ServicesPage from './ServicesPage';
 import ProjectsPage from './ProjectsPage';
 import ContactsPage from './ContactsPage';
 import MorePage from './MorePage';
+import NewsPage from './NewsPage';
 
 // Static data moved outside component to avoid recreation and satisfy exhaustive-deps
 const FONTS = [
@@ -20,6 +21,14 @@ const FONTS = [
   { name: 'Roboto', class: 'font-mono' },
   { name: 'Georgia', class: 'font-serif' },
   { name: 'Arial', class: 'font-sans' }
+];
+
+// New: available font size utility classes
+const FONT_SIZES = [
+  { label: 'S', value: 'text-sm' },
+  { label: 'L', value: 'text-lg' },
+  { label: 'XL', value: 'text-xl' },
+  { label: '2XL', value: 'text-2xl' }
 ];
 
 const NEWS_DATA = [
@@ -94,7 +103,9 @@ const MainPage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [currentFont, setCurrentFont] = useState('Inter');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [lang, setLang] = useState('ru');
+  const [lang, setLang] = useState('uz');
+  // New: font size state
+  const [fontSize, setFontSize] = useState('text-base');
 
   const fonts = FONTS; // alias for readability
 
@@ -123,7 +134,7 @@ const MainPage = () => {
 
   const themeClasses = isDarkMode 
     ? "bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white"
-    : "bg-gradient-to-br from-slate-100 via-blue-100 to-indigo-100 text-gray-900";
+    : "bg-gradient-to-br from-white-100 via-white-900 to-indigo-100 text-gray-900";
 
   const cardClasses = isDarkMode
     ? "bg-black bg-opacity-30 backdrop-blur-lg"
@@ -143,7 +154,8 @@ const MainPage = () => {
 
   const getFontClass = () => {
     const font = fonts.find(f => f.name === currentFont);
-    return font ? font.class : 'font-sans';
+    // Append font size class
+    return `${font ? font.class : 'font-sans'} ${fontSize}`;
   };
 
   const renderPage = () => {
@@ -152,6 +164,7 @@ const MainPage = () => {
       case 'projects': return <ProjectsPage />;
       case 'contacts': return <ContactsPage />;
       case 'more': return <MorePage />;
+      case 'news': return <NewsPage isDarkMode={isDarkMode} cardClasses={cardClasses} newsData={NEWS_DATA} lang={lang} />;
       default:
         return (
           <HomePage
@@ -162,6 +175,7 @@ const MainPage = () => {
             newsData={NEWS_DATA}
             analysisData={ANALYSIS_DATA}
             lang={lang}
+            setCurrentPage={setCurrentPage} // added
           />
         );
     }
@@ -236,6 +250,10 @@ const MainPage = () => {
           fonts={fonts}
           currentFont={currentFont}
           setCurrentFont={setCurrentFont}
+          // New props for size selection
+          fontSizes={FONT_SIZES}
+          fontSize={fontSize}
+          setFontSize={setFontSize}
         />
       )}
     </Layout>
