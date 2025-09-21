@@ -183,6 +183,8 @@ const MainPage = () => {
 
   return (
     <Layout themeClasses={themeClasses} getFontClass={getFontClass} isDarkMode={isDarkMode}>
+      <script src="//code.jivo.ru/widget/2QhP4sPx4j" async className='my-10'></script>
+
       {!isMobile && (
         <DesktopNav
           isDarkMode={isDarkMode}

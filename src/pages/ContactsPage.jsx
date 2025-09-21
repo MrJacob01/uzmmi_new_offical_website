@@ -230,16 +230,6 @@ const ContactsPage = ({ cardClasses, textSecondary }) => {
           <div className="absolute left-3 px-3 bg-black/50 backdrop-blur text-xs font-medium">
             {selectedOffice.title}
           </div>
-          <div className="absolute bottom-4 right-4 flex gap-2">
-            <a
-              href={mapsLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium px-4 py-2 rounded-md shadow transition inline-flex items-center gap-1"
-            >
-              <ExternalLink className="h-3.5 w-3.5" /> Открыть
-            </a>
-          </div>
         </div>
 
         {/* Details / Actions */}
