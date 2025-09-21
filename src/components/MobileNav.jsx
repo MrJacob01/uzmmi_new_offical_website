@@ -15,23 +15,23 @@ const MobileNav = ({ isDarkMode, setIsSearchOpen, setIsSettingsOpen, setIsDarkMo
       <div className="flex items-center space-x-1 cursor-pointer" onClick={() => setCurrentPage('home')}>
         <img src='/images/logo_nim.svg' alt='Logo' className="w-13" />
       </div>
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 text-white">
         <span className={`font-mono text-xs text-white`} aria-label="Current time">{timeStr}</span>
         <button 
           onClick={() => setIsSearchOpen(true)}
-          className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
+          className={`p-2 rounded-lg bg-blue-800 hover:bg-gray-700 transition-colors`}
         >
           <Search size={20} />
         </button>
         <button 
           onClick={() => setIsSettingsOpen(true)}
-          className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
+          className={`p-2 rounded-lg bg-blue-800 hover:bg-gray-700 transition-colors`}
         >
           <Eye size={20} />
         </button>
         <button 
           onClick={() => setIsDarkMode(!isDarkMode)}
-          className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
+          className={`p-2 rounded-lg bg-blue-800 hover:bg-gray-700 transition-colors`}
         >
           {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
         </button>

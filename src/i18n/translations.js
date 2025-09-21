@@ -60,6 +60,10 @@ export const translations = {
       writeUs: 'Написать нам',
       send: 'Отправить'
     },
+    contacts_page: {
+
+
+    },
     more: { title: 'Дополнительно' },
     services: { title: 'Наши услуги' },
     projects: { title: 'Наши проекты' },
@@ -96,7 +100,7 @@ export const translations = {
     },
     about: {
       header: 'Why me?',
-      title: 'About company',
+      title: 'About institute',
       card1_head:'Experience & Innovation',
       card1_title: 'First IT solutions in Uzbekistan. Over 1400 experts.',
       card2_head:'Smart Technologies',
@@ -177,7 +181,7 @@ export const translations = {
     },
     about: {
       header: 'Nima uchun biz?',
-      title: 'Kompaniya haqida',
+      title: 'INSTITUT HAQIDA',
       card1_head:'Tajribalar va innovatsiyalar',
       card1_title: 'O‘zbekistondagi birinchi IT-yechimlar. 1400 dan ortiq mutaxassislar.',
       card2_head:'Zamonaviy texnologiyalar',

@@ -121,7 +121,7 @@ const NewsPage = ({ isDarkMode, cardClasses, newsData, lang }) => {
               <select
                 value={sort}
                 onChange={e => setSort(e.target.value)}
-                className={`text-xs px-2 py-1 rounded-md border outline-none ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-white border-gray-300'}`}
+                className={`text-xs px-2 py-1 rounded-md border outline-none bg-blue-800 border-blue-600`}
               >
                 <option value="latest">Новейшие</option>
                 <option value="oldest">Старые</option>
@@ -129,11 +129,11 @@ const NewsPage = ({ isDarkMode, cardClasses, newsData, lang }) => {
             </div>
             {/* New: Page size */}
             <div className="flex items-center gap-3">
-              <label className="text-xs opacity-70">На странице:</label>
+              <label className="text-xs ">На странице:</label>
               <select
                 value={pageSize}
                 onChange={e => setPageSize(Number(e.target.value))}
-                className={`text-xs px-2 py-1 rounded-md border outline-none ${isDarkMode ? 'bg-white/5 border-white/10' : 'bg-white border-gray-300'}`}
+                className={`text-xs px-2 py-1 rounded-md border outline-none bg-blue-800 border-blue-600`}
               >
                 {[3,6,9,12].map(sz => <option key={sz} value={sz}>{sz}</option>)}
               </select>

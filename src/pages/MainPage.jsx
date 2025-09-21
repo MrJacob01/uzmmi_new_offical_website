@@ -133,7 +133,7 @@ const MainPage = () => {
   }, [searchQuery]);
 
   const themeClasses = isDarkMode 
-    ? "bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white"
+    ? "bg-black opacity-90 text-white"
     : "bg-gradient-to-br from-white-100 via-white-900 to-indigo-100 text-gray-900";
 
   const cardClasses = isDarkMode

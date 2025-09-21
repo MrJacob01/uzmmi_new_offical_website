@@ -177,19 +177,19 @@ const DesktopNav = ({ isDarkMode, borderClasses, navItems, currentPage, setCurre
             </span>
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
+              className={`p-2 rounded-lg bg-blue-800 hover:bg-gray-700 transition-colors`}
             >
               <Search size={20} />
             </button>
             <button 
               onClick={() => setIsSettingsOpen(true)}
-              className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
+              className={`p-2 rounded-lg bg-blue-800 hover:bg-gray-700 transition-colors`}
             >
               <Eye size={20} />
             </button>
             <button 
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className={`p-2 rounded-lg bg-blue-400 hover:bg-gray-700 transition-colors`}
+              className={`p-2 rounded-lg bg-blue-800 hover:bg-gray-700 transition-colors`}
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
